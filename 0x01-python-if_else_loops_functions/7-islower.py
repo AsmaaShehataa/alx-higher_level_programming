@@ -4,4 +4,3 @@ def islower(letter):
 		return True
 	else:
 		return False
-
