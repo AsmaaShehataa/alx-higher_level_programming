@@ -6,6 +6,6 @@ def uniq_add(my_list=[]):
     total = 0
 
     for num in unique_set:
-            total += num
+        total += num
 
     return total
