@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""file defines a sqre"""
+"""File defines a square"""
 
 class Square:
-    """a class sqre that defines a square"""
+    """A class Square that defines a square"""
     def __init__(self, size=None):
-        """creatinf a private ATT size"""
+        """create private attribute size """
         self.__size = size
