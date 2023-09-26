@@ -1,8 +1,8 @@
 #!/usr/bin/python3
-"""File defines a square"""
+"""Module here"""
+
 
 class Square:
-    """A class Square that defines a square"""
-    def __init__(self, size=None):
-        """create private attribute size """
-        self.__size = size
+    """Square class with private instance attribute size"""
+    def __init__(self, size):
+        self.__size = size  # size is value of user input or program input
