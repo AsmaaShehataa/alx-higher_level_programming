@@ -8,6 +8,7 @@ class Rectangle:
     """
     A class Rectangle that defines a rectangle
     """
+    number_of_instances = 0
 
     def __init__(self, width=0, height=0):
         """
@@ -15,6 +16,7 @@ class Rectangle:
         """
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -68,7 +70,7 @@ class Rectangle:
 
     def __str__(self):
         """
-        String represenation
+        String rep
         """
         string = ""
         for i in range(self.height):
@@ -77,7 +79,7 @@ class Rectangle:
 
     def __repr__(self):
         """
-        Representation
+        Rep
         """
         return "Rectangle({}, {})".format(self.width, self.height)
 
@@ -85,5 +87,5 @@ class Rectangle:
         """
         Delete
         """
-        Rectangle.number_of_instances -= 1
         print('Bye rectangle...')
+        Rectangle.number_of_instances -= 1
