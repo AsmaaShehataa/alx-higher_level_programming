@@ -1,0 +1,72 @@
+``add_integer doctest`` module
+==============================
+import function from module:
+    >>> add_integer = __import__('0-add_integer').add_integer
+    >>> add_integer(1, 2)
+    3
+
+    >>> add_integer(100, -5)
+    95
+
+    >>> add_integer(111, 69)
+    180
+
+    >>> add_integer(200.3, -5)
+    195
+
+    >>> add_integer(15, 3.7)
+    18
+
+    >>> add_integer(1, float('inf'))
+    inf
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+    ...
+    ValueError: can't convert float NaN to integer
+
+    >>> add_integer(9223372036854775807, 1)
+    9223372036854775808
+
+    >>> add_integer('hello', 43)
+    Traceback (most recent call last)
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer('ALX', 16)
+    Traceback (most recent call last)
+    ...
+    TypeError: a must be an integer
+
+    >>> add_integer(16, [1, 2, 3])
+    Traceback (most recent call last)
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer(12, "zero")
+    Traceback (most recent call last)
+    ...
+    TypeError: b must be an integer
+
+    >>> add_integer(500)
+    598
+
+    >>> add_integer(0)
+    98
+
+    >>> add_integer(999999998, 999999999)
+    1999999997
+
+    >>> add_integer(34263478, -89234582395)
+    -89200318917
+
+    >>> add_integer(0, -0.0)
+    0
+
+    >>> add_integer(0.1, 0.2)
+    0
+
+    >>> add_integer(float('inf'))
+    Traceback (most recent call last):
+    ...
+    OverflowError: cannot convert float infinity to integer
