@@ -1,6 +1,7 @@
 Using ``My List``
 ====================
-MyList = __import__("1-my_list").MyList
+import function from module:
+>>>MyList = __import__("1-my_list").MyList
 
 Checking for module docstring:
          >>> m = __import__("1-my_list").__doc__
