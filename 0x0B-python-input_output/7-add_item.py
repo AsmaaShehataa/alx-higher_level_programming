@@ -12,5 +12,5 @@ try:
 except Exception:
     O-data = []
 
-O-data.extend(arglist)
+O-data.extend(args)
 save_to_json_file(O-data, 'add_item.json')
