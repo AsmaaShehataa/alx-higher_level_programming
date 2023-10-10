@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-""" script that adds all arguments to a Python list"""
+"""Module that loads, adds and saves arguments to a Python list"""
+from sys import argv
 
-import sys
-save_to_json_file = __import__('5-save_to_json_file').save_to_json_file
-load_from_json_file = __import__('6-load_from_json_file').load_from_json_file
 
-args = list(sys.argv[1:])
+load_file = __import__('6-load_from_json_file').load_from_json_file
+save_file = __import__('5-save_to_json_file').save_to_json_file
 
 try:
-    O_data = load_from_json_file('add_item.json')
-except Exception:
-    O_data = []
+    json_list = load_file('add_item.json')
+except (ValueError, FileNotFoundError):
+    json_list = []
 
-O_data.extend(args)
-save_to_json_file(O_data, 'add_item.json')
+for item in argv[1:]:
+    json_list.append(item)
+
+save_file(json_list, 'add_item.json')
