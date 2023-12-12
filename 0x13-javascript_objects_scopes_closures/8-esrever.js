@@ -1,6 +1,6 @@
 #!/usr/bin/node
 exports.esrever = function (list) {
-  let output = [];
+  const output = [];
   while (list.length) {
     output.push(list.pop());
   }
