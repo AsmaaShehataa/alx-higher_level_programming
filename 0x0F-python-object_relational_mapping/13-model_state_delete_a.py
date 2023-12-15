@@ -1,4 +1,5 @@
-"""delete the States with A letter form the database"""
+#!/usr/bin/python3
+"""Delete all state with A letter"""
 
 from model_state import State, Base
 from sqlalchemy import create_engine
@@ -19,7 +20,7 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     my_local_session = Session()
     states = my_local_session.query(State).filter(
-        State.name.op('regexp')('.*a+.*'))  # get all states that contains  "A"
+            State.name.op('regexp')('.*a+.*'))
 
     for state in states:
         my_local_session.delete(state)
