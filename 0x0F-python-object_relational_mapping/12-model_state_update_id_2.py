@@ -20,7 +20,7 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     my_local_session = Session()
     state = my_local_session.query(State).filter(State.id == 2).first()
-    State.name = 'New Mexico'
+    state.name = 'New Mexico'
     my_local_session.commit()
 
     my_local_session.close()
