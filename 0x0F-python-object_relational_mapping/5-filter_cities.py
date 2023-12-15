@@ -1,27 +1,27 @@
 #!/usr/bin/python3
-"""
-connect to the database and fetch data
-"""
-
-import MySQLdb
-import sys
+"""takes in the name of a state as an argument and
+lists all cities of that state,
+using the database hbtn_0e_4_usa"""
 
 if __name__ == '__main__':
 
-    mydb = MySQLdb.connect(
-            host="localhost", user=sys.argv[1],
-            passwd=sys.argv[2],
-            db=sys.argv[3],
-            port=3306
-        )
+    import MySQLdb
+    import sys
 
-    cur = mydb.cursor()
+    mydb = MySQLdb.connect(
+        host="localhost", user=sys.argv[1],
+        passwd=sys.argv[2],
+        db=sys.argv[3],
+        port=3306
+    )
+
+    cur = db.cursor()
     cur.execute("SELECT cities.name\
-                FROM cities left join states\
-                on states.id = cities.state_id\
+                FROM cities LEFT JOIN states\
+                ON states.id = cities.state_id\
                 WHERE states.name = %s\
                 ORDER BY cities.id ASC", (sys.argv[4],))
     rows = cur.fetchall()
     print(", ".join([row[0] for row in rows]))
     cur.close()
-    db.close()
+    mydb.close()
