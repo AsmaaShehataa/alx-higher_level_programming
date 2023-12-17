@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 create state "California" with city attribute "San Francisco"
-parameters given to script: username, password, database task 100
+parameters given to script: username, password, database
 """
 
 from sys import argv
@@ -13,7 +13,6 @@ from sqlalchemy.orm import sessionmaker
 
 if __name__ == "__main__":
 
-    # make engine for database
     user = argv[1]
     passwd = argv[2]
     db = argv[3]
@@ -23,12 +22,12 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    new_state = State(name="California")
-    new_city = City(name="San Francisco")
-    new_state.cities.append(new_city)
+    new_s = State(name="California")
+    new_c = City(name="San Francisco")
+    new_s.cities.append(new_c)
 
-    session.add(new_state)
-    session.add(new_city)
+    session.add(new_s)
+    session.add(new_c)
 
     session.commit()
     session.close()
