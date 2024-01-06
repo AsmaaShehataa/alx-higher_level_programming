@@ -11,5 +11,5 @@ if __name__ == '__name__':
 
   my_prms = parse.urlencode({'email': email}).encode('utf-8') #encoding - sending - Post
   with request.urlopen(url, data=my_prms) as response:
-    req_id = response.read().decode('utf-8') #decoding - receiving
-    print(req_id)
+    content = response.read().decode('utf-8') #decoding - receiving
+    print(content)
