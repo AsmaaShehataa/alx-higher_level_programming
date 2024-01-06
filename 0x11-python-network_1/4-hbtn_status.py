@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""Python script that fetches https://alx-intranet.hbtn.io/status"""
+""" url using request fetching """
+
 
 if __name__ == '__main__':
-  import requests
+    import requests
 
-  url = 'https://alx-intranet.hbtn.io/status'
+    url = 'https://alx-intranet.hbtn.io/status'
 
-  with requests.get(url) as r:
+    with requests.get(url) as r:
         content = r.text
         print(f"Body response:")
         print(f"\t- type: {type(content)}")
