@@ -2,10 +2,11 @@
 """Python script that takes in a URL and an email, 
 sends a POST request to the passed URL
 """
-from sys import argv
-from urllib import request, parse
 
 if __name__ == '__name__':
+  from sys import argv
+  from urllib import request, parse
+
   url = argv[1]
   email = argv[2]
 
