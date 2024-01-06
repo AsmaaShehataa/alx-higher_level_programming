@@ -3,7 +3,7 @@
 sends a POST request to the passed URL
 """
 
-if __name__ == '__name__':
+if __name__ == '__main__':
   from sys import argv
   from urllib import request, parse
 
