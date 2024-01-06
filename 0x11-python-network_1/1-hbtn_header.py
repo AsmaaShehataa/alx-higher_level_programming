@@ -1,11 +1,12 @@
 #!/usr/bin/python3
-"""ID Request from a URL"""
+""" fetch id from a requested url """
+
 
 if __name__ == '__main__':
-  from urllib import request
-  from sys import argv
+    from urllib import request
+    from sys import argv
 
-  url = argv[1]
-  with request.urlopen(url) as response:
-    req_ID = response.getheader('X-Rewuest-Id')
-    print(req_ID)
+    url = argv[1]
+    with request.urlopen(url) as response:
+        request_id = response.getheader('X-Request-Id')
+        print(request_id)
