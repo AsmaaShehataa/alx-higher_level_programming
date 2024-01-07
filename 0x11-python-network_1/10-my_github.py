@@ -8,7 +8,7 @@ if __name__ == "__main__":
     url = 'https://api.github.com/user'
     username = "AsmaaShehataa"
     username = argv[1]
-    passwd = argv[2]
-    headers = {'Authorization': 'passwd {}'.format(passwd)}
+    password = argv[2]
+    headers = {'Authorization': 'password {}'.format(password)}
     resp = requests.get(url, headers=headers)
     print(resp.json().get('id'))
