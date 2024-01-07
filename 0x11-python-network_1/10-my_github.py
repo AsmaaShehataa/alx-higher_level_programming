@@ -9,9 +9,9 @@ import sys
 
 if __name__ == "__main__":
     url = 'https://api.github.com/user'
-    username = 'Gzoref'
+    username = 'AsmaaShehataa'
     username = sys.argv[1]
-    token = sys.argv[2]
-    headers = {'Authorization': 'token {}'.format(token)}
-    req = requests.get(url, headers=headers)
-    print(req.json().get('id'))
+    password = sys.argv[2]
+    headers = {'Authorization': 'password {}'.format(password)}
+    res = requests.get(url, headers=headers)
+    print(res.json().get('id'))
