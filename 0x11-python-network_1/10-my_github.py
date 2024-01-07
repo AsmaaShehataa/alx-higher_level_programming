@@ -7,7 +7,6 @@ from sys import argv
 
 if __name__ == "__main__":
     url = 'https://api.github.com/user'
-    username = 'AsmaaShehataa'
     username = argv[1]
     password = argv[2]
     headers = {'Authorization': 'password {}'.format(password)}
