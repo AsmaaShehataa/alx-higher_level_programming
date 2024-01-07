@@ -11,8 +11,4 @@ if __name__ == "__main__":
     passwd = argv[2]
     headers = {'Authorization': 'password {}'.format(passwd)}
     resp = requests.get(url, headers=headers)
-    try:
-        resp.raise_for_status()
-        print(resp.json().get('id'))
-    except requests.exceptions.HTTPError as err:
-        print("Error code: {}".format(resp.status_code))
+    print(resp.json().get('id'))
