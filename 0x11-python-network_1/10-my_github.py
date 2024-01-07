@@ -9,6 +9,6 @@ if __name__ == "__main__":
     user = "AsmaaShehataa"
     user = argv[1]
     passwd = argv[2]
-    headers = {'Authorization': 'password {}'.format(passwd)}
+    headers = {'Authorization': 'passwd {}'.format(passwd)}
     resp = requests.get(url, headers=headers)
     print(resp.json().get('id'))
