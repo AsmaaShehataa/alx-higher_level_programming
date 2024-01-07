@@ -6,10 +6,10 @@ import requests
 
 if __name__ == "__main__":
     try:
-        response = requests.get(argv[1])
-        error = response.raise_for_status()
-        if not error:
-            print(response.text)
+        resp = requests.get(argv[1])
+        err = resp.raise_for_status()
+        if not err:
+            print(resp.text)
     except requests.exceptions.HTTPError as err:
-        if response.status_code >= 400:
-            print(f'Error code: {response.status_code}')
+        if resp.status_code >= 400:
+            print(f'Error code: {resp.status_code}')
