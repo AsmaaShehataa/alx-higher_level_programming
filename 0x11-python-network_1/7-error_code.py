@@ -4,12 +4,12 @@
 from sys import argv
 import requests
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     try:
-        resp = requests.get(argv[1])
-        err = resp.raise_for_status()
-        if not err:
-            print(resp.text)
+        response = requests.get(argv[1])
+        error = response.raise_for_status()
+        if not error:
+            print(response.text)
     except requests.exceptions.HTTPError as err:
-        if resp.status_code >= 400:
-            print(f'Error code: {resp.status_code}')
+        if response.status_code >= 400:
+            print(f'Error code: {response.status_code}')
